@@ -1,8 +1,10 @@
 package week1;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,15 +46,43 @@ public class S3_53_Create_Task {
 		driver.findElementByXPath("//input[@title='Search Accounts']").click();
 		driver.findElementByXPath("//div[@title='Fortune']").click();
 		driver.findElementByXPath("//input[@class='inputDate input']").click();
-		driver.findElementByXPath("//span[normalize-space()='13']").click();
+		driver.findElementByXPath("//span[normalize-space()='15']").click();
 		driver.findElementByXPath("//a[normalize-space()='Normal']").click();
 		driver.findElementByXPath("//a[normalize-space()='High']").click();
 		driver.findElementByXPath("//button[@title='Save']").click();
 		
+		List<String> beforeCreate = new ArrayList<>();
+		beforeCreate.add("mtuh");
+		beforeCreate.add("Fortune");
+		beforeCreate.add("5/15/2021");
+		beforeCreate.add("DDsou");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@title='Refresh']")).click();
+		Thread.sleep(2000);
+		
+	List<WebElement> row =	driver.findElements(By.xpath("//tbody/tr[1]/td"));
+	List<String> afterCreate = new ArrayList<>();
+	System.out.println(row.size());
+		for(int i = 3; i <row.size();i++)
+		{
+			//System.out.println("inside");
+			System.out.println(driver.findElement(By.xpath("//tbody/tr[1]/td["+i+"]")).getText());
+			String value = driver.findElement(By.xpath("//tbody/tr[1]/td["+i+"]")).getText();
+			afterCreate.add(value);
+			
+		}
 		
 		
 		
 		
+	if(beforeCreate.equals(afterCreate))	
+	{
+		System.out.println("pass");
+	}
+	else
+	{
+		System.out.println("fail");
+	}
 		
 		    
 		
