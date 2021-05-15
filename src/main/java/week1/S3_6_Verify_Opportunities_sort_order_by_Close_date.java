@@ -39,13 +39,11 @@ public class S3_6_Verify_Opportunities_sort_order_by_Close_date {
 		Thread.sleep(3000);
 		driver.findElementByXPath("//p[text()='Sales']").click();
 		driver.executeScript("arguments[0].click();", driver.findElementByXPath("//span[@class='slds-truncate'][normalize-space()='Opportunities']"));
-		//System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>actual list before sort<<<<<<<<<<<<<<<<<<<<<<<");
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>des order<<<<<<<<<<<<<<<<<<<<<<<");
 
 		driver.findElement(By.xpath("//th[@title='Close Date']//a[contains(@class,'toggle slds-th__action slds-text-link--reset')]")).click();
 		Thread.sleep(3000);
-		//list
-		//after ase in list
+	
 		
 		ArrayList<String> actualList = new ArrayList(); 
 		int count = 9;
@@ -58,26 +56,14 @@ public class S3_6_Verify_Opportunities_sort_order_by_Close_date {
 			actualList.add(date);
 		}
 	Collections.reverse(actualList);
-	//	Collections.sort(actualList);
-		/*Collections.sort(actualList, new Comparator<String>() {
-			DateFormat f = new SimpleDateFormat("dd/mm/yyyy");
-			public int compare(String o1, String o2) {
-			try {
-			  return f.parse(o1).compareTo(f.parse(o2));
-			    } catch (ParseException e) {
-			      throw new IllegalArgumentException(e);
-			    }
-			}
-			});*/
-		//System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<after sort<<<<<<<<<<<<<<<<<<<<<<<<<<");
+	
 		System.out.println("After reversed the existing one" +actualList);
 	
 
-		//driver.findElement(By.xpath("//th[@title='Close Date']//a[contains(@class,'toggle slds-th__action slds-text-link--reset')]")).click();
 
 		driver.findElement(By.xpath("//th[@title='Close Date']//a[contains(@class,'toggle slds-th__action slds-text-link--reset')]")).click();
 		Thread.sleep(3000);
-		//System.out.println(">>>>>>>>>>>>>>>>>after applied sort function for close by date<<<<<<<<<<<<<<<<<<<<<<<");
+	
 		System.out.println(">>>>>>>>>>>>>>>>>ascending orer<<<<<<<<<<<<<<<<<<<<<<<");
 
 		ArrayList<String> currentSortedList = new ArrayList(); 
