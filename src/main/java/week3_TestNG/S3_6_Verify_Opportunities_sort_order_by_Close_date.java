@@ -1,4 +1,4 @@
-package week1;
+package week3_TestNG;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -22,8 +22,8 @@ import com.seleniumbootcamp.base.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class S3_6_Verify_Opportunities_sort_order_by_Close_date extends BaseClass{
-@Test
-public void sortOrderByCloseDate() throws InterruptedException {
+
+public static void sortOrderByCloseDate() throws InterruptedException {
 		
 		driver.findElementByClassName("slds-icon-waffle").click();
 		driver.findElementByXPath("//button[text()='View All']").click();

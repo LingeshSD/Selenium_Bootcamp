@@ -1,4 +1,4 @@
-package week2;
+package week3_TestNG;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,8 +18,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class S3_60_Filter_Task extends BaseClass{
 
-	@Test
-	public void filterTask() throws InterruptedException
+	
+	public static void filterTask() throws InterruptedException
 	{
 		
 		driver.findElementByClassName("slds-icon-waffle").click();

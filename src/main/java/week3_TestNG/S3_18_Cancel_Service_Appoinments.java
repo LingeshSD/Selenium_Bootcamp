@@ -1,4 +1,4 @@
-package week1;
+package week3_TestNG;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -17,8 +17,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class S3_18_Cancel_Service_Appoinments extends BaseClass {
 	
 
-	@Test
-	public void cancelServiceAppoinments() throws InterruptedException {
+
+	public static void cancelServiceAppoinments() throws InterruptedException {
 		driver.findElementByClassName("slds-icon-waffle").click();
 		driver.findElementByXPath("//button[text()='View All']").click();
 		Thread.sleep(3000);
